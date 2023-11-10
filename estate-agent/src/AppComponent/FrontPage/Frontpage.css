@@ -1,0 +1,53 @@
+body {
+    background-color: #f8f9fa; /* Set your desired background color */
+  }
+  .custom-row img {
+    width: 100px;
+    height: 100px;
+  }
+  .navbar{
+    background-color: black;
+  }
+  h1 {
+    display: inline-block;
+    text-align: center;
+    padding-left: 30px;
+    color: #087038; /* Set your desired text color */
+  }
+
+  /* Add a black background color to the top navigation */
+	.navbar-nav {
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .navbar a:hover {
+        background-color: #087038;
+        color: white;
+        border-radius: 10px;
+      }
+      /* .navbar li.active {
+        background-color: #087038;
+        color: white;
+        border-radius: 10px;
+      } */
+      /* Style the links inside the navigation bar */
+      .navbar a {
+        text-align: center;
+        flex-direction: column;
+        text-decoration: none;
+        font-size: 30px;
+        border-radius: 10px;
+        color: white;
+       
+      }
+
+    .custom-row{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width: 50%;
+        height: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        padding: 20px;
+    }
