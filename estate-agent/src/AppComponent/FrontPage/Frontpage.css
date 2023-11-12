@@ -25,13 +25,13 @@ body {
         color: white;
         border-radius: 10px;
       }
-      /* .navbar li.active {
+      .navbar a:active {
         background-color: #087038;
         color: white;
         border-radius: 10px;
-      } */
+      }
       /* Style the links inside the navigation bar */
-      .navbar a {
+      .nav-link {
         text-align: center;
         flex-direction: column;
         text-decoration: none;

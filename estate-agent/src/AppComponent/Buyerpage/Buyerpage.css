@@ -1,0 +1,22 @@
+.Buyerapp {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.Buyerapp table {
+    border: 2px solid rgb(255, 25, 0);
+    width: 800px;
+    height: 200px;
+}
+ 
+.Buyerapp th {
+    text-align: center;
+    border-bottom: 1px solid rgb(14, 123, 212);
+}
+ 
+.Buyerapp td {
+    text-align: center;
+}

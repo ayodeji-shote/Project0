@@ -1,0 +1,22 @@
+.PropertyApp {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+.PropertyApp table {
+    border: 2px solid forestgreen;
+    width: 800px;
+    height: 200px;
+}
+ 
+.PropertyApp th {
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+ 
+.PropertyApp td {
+    text-align: center;
+}
