@@ -1,38 +1,42 @@
-import { Link } from "react-router-dom";
+import { Link, useState, useEffect } from "react";
 import "./Buyerpage";
 import "./Buyerpage.css";
 import React from "react";
 
-const data = [
-    { name: "Liam", age: 24, gender: "Male" },
-    { name: "Anthony", age: 23, gender: "Male" },
-    { name: "Toby", age: 25, gender: "Male" },
-];
 function Buyerpage() {
+  // Fetch method to get data from the json and then display it as data
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/buyer")
+      .then((res) => res.json())
+      .then((data) => setData(data))
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div className="Buyerapp">
-             <table>
-                <tbody>
-                <tr>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                </tr>
-                </tbody>
-                <tbody>
-                {data.map((val, key) => {
-                    return (
-                    
-                        <tr key={key}>
-                            <td key={val.key}>{val.name}</td>
-                            <td key={val.key} >{val.age}</td>
-                            <td key={val.key} >{val.gender}</td>
-                        </tr>
-                    )
-                })}
-                </tbody>
-            </table>
-        </div>
+      <table>
+        <tbody>
+          <tr>
+            <th>First Name</th>
+            <th>Surname </th>
+            <th>Address</th>
+            <th>Postcode</th>
+            <th>Phone Number</th>
+          </tr>
+        </tbody>
+        <tbody>
+        {data.map((item) => (
+          <tr key={item.id}>
+            <td>{item.firstName}</td>
+            <td>{item.surname}</td>
+            <td>{item.address}</td>
+            <td>{item.postcode}</td>
+            <td>{item.phone}</td>
+          </tr>
+        ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 export default Buyerpage;

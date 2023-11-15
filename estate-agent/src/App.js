@@ -1,9 +1,7 @@
 import React from "react";
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import './App.css';
-
 import FrontPage from './AppComponent/Frontpage/Frontpage';
-// import BookingInfo from './AppComponent/BookingInfo';
 import Buyerpage from './AppComponent/Buyerpage/Buyerpage';
 import Propertypage from './AppComponent/Propertypage/Propertypage';
 import Sellerpage from './AppComponent/Sellerpage/Sellerpage';

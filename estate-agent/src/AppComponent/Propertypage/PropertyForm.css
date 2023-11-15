@@ -1,0 +1,13 @@
+.form-select{
+    width: 70%;
+}
+
+.row {
+    border: 2px solid forestgreen;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.label {
+    text-align:center;
+}

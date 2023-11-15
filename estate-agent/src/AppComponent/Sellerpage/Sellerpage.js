@@ -1,37 +1,44 @@
-import { Link } from "react-router-dom";
+import { Link,useState,useEffect} from "react";
 import "./Sellerpage";
 import "./Sellerpage.css";
 import React from "react";
 
-const data = [
-    { name: "jenny", age: 19, gender: "Male" },
-    { name: "mark", age: 19, gender: "Female" },
-    { name: "juan", age: 25, gender: "Male" },
-];
+
 function Sellerpage() {
+    // Fetch method to get data from the json and then display it as data 
+    const [data, setData] = useState([]);
+    useEffect(() => {
+            fetch("http://localhost:3000/seller")
+            .then((res) => res.json())
+            .then((data) => setData(data))
+            .catch((err) => console.log(err));
+        }, []);      
   return (
     <div className="sellerapp">
            <table>
-                <tbody>
+      <tbody>
                 <tr>
-                    <th>Name</th>
-                    <th>Age</th>
-                    <th>Gender</th>
+                    <th>First Name</th>
+                    <th>Surname </th>
+                    <th>Address</th>
+                    <th>Postcode</th>
+                    <th>Phone Number</th>
                 </tr>
                 </tbody>
                 <tbody>
-                {data.map((val, key) => {
-                    return (
+       {data.map((item) => (
+                <tr key={item.id}>
+                    <td>{item.firstName}</td>
+                    <td>{item.surname}</td>
+                    <td>{item.address}</td>
+                    <td>{item.postcode}</td>
+                    <td>{item.phone}</td>
                     
-                        <tr key={key}>
-                            <td key={val.key}>{val.name}</td>
-                            <td key={val.key} >{val.age}</td>
-                            <td key={val.key} >{val.gender}</td>
-                        </tr>
-                    )
-                })}
-                </tbody>
+                </tr>
+            ))}
+             </tbody>
             </table>
+           
         </div>
   );
 }
