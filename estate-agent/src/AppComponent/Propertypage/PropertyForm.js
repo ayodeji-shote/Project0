@@ -1,13 +1,14 @@
 import React ,{ useRef } from "react";
 import "./Propertypage"
 import "./PropertyForm.css"
+import { FaTruckLoading,FaBed,FaBath   } from "react-icons/fa";
 
 
 // Passing an object into the function which is generated from the form for the properties table.
 // Properties form is as it says a property form, props is the properties of the object.
-let PropertyForm = (props)=> {
-
-    let searcher = props.searcher;
+const PropertyForm = (props)=> {
+    
+    const searchHandler = props.searchHandler;
     // Refs are used to get the values from the form, the property form method is called with the parameter of this.props
     // props then uses the useRef hooks in order to get the value .
     const houseType = useRef();
@@ -17,23 +18,34 @@ let PropertyForm = (props)=> {
     const houseBathrooms = useRef();
     const houseGarden = useRef();
 
-    let searchvalues = () => {
-
-
-
-
-    }
-
-    
+    const searchvalues = () => {
+        searchHandler(
+            {
+                type: houseType.current.value,
+                status: houseStatus.current.value,
+                price: housePrice.current.value,
+                bedroom: houseBedrooms.current.value,
+                bathroom: houseBathrooms.current.value,
+                garden: houseGarden.current.value
+            }
+        );
+    };
     let clearValues = () => {
+        houseType.current.value = "ANY";
+        houseStatus.current.value = "ANY";
+        housePrice.current.value = 0;
+        houseBedrooms.current.value = 0;
+        houseBathrooms.current.value = 0;
+        houseGarden.current.value = 0;
 
-    }
+    };
     return (
-        <form>
+        
+        <form className="pform">
             <div className="row">
                 <h1>Property Search and Bookings</h1>
                 <div className="form-group col">
-                <label htmlFor="formType">Type</label>
+                <p htmlFor="formType"> <i className="bi bi-house"></i> Type</p>
                 <select  className="form-select" id="type" ref={houseType} >
                     <option value="ANY">Any</option>
                     <option value="DETACHED">Detached</option>
@@ -42,7 +54,7 @@ let PropertyForm = (props)=> {
                 </select>
                 </div>
                 <div className="form-group col">
-                <label htmlFor="formPrice">Price</label>
+                <p htmlFor="formPrice"> <i className="bi bi-cash-coin"></i>Price</p>
                 <select  className="form-select" ref={housePrice}>
                     <option value="0">Any</option>
                     <option value="50000">Up to 50000</option>
@@ -53,15 +65,15 @@ let PropertyForm = (props)=> {
                 </select>
                 </div>
                 <div className="form-group col">
-                <label htmlFor="formStatus">Status</label>
-                <select  className="form-select" ref={housePrice}>
-                    <option value="0">Any</option>
+                <p htmlFor="formStatus"> <FaTruckLoading />Status</p>
+                <select  className="form-select" ref={houseStatus}>
+                    <option value="ANY">Any</option>
                     <option value="SOLD">SOLD</option>
                     <option value="FOR SALE">FOR SALE</option>
                 </select>
                 </div>
                 <div className="form-group col">
-                <label htmlFor="numberOfBedrooms">Bedrooms</label>
+                <p htmlFor="numberOfBedrooms"> <FaBed/>Bedrooms</p>
                 <select  className="form-select" ref={houseBedrooms}>
                     <option value="0">Any</option>
                     <option value="1">Minimum 1</option>
@@ -72,7 +84,7 @@ let PropertyForm = (props)=> {
                 </select>
             </div>
             <div className="form-group col">
-                <label htmlFor="numberOfBathrooms">Bathrooms</label>
+                <p htmlFor="numberOfBathrooms"> <FaBath /> Bathrooms</p>
                 <select className="form-select" ref={houseBathrooms}>
                     <option value="0">Any</option>
                     <option value="1">Minimum 1</option>
@@ -81,7 +93,7 @@ let PropertyForm = (props)=> {
                 </select>
             </div>
             <div className="form-group col">
-                <label htmlFor="numberOfGardens">Garden</label>
+                <p htmlFor="numberOfGardens"> <i className="bi bi-tree"></i> Garden</p>
                 <select className="form-select" ref={houseGarden}>
                     <option value="0">Any</option>
                     <option value="1">Yes</option>

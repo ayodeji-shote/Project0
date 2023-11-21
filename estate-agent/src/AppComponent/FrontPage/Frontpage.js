@@ -1,5 +1,9 @@
 /* eslint-disable react/jsx-no-undef */
 import { Link, Outlet} from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import "./Frontpage.css";
 import React from "react";
 function Frontpage() {
@@ -16,25 +20,24 @@ function Frontpage() {
           Real Estate Agent
         </h1>
       </div>
-      <nav className="navbar navbar-expand-lg ">
-        <ul className="navbar-nav">
-        <li className="nav-item">
-            <a className="nav-link" href="property">
-            Properties
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="seller">
-              Sellers
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="buyer">
-              Buyers
-            </a>
-          </li>
-        </ul>
-      </nav>
+      <Navbar bg="dark" data-bs-theme="dark">
+        <Container>
+          <Navbar.Brand href="property">
+            <img
+              alt=""
+              src={require("../../image/qa.png")}
+              width="30"
+              height="30"
+              className="d-lg-grid"
+            />{' '}
+          </Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="property">Property</Nav.Link>
+            <Nav.Link href="seller">Sellers</Nav.Link>
+            <Nav.Link href="buyer">Buyers</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
     </div><div className="container">
         <Outlet />
       </div>
