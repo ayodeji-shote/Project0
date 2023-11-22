@@ -1,0 +1,17 @@
+.form-select{
+    width: 70%;
+}
+
+.pform row {
+    border: 2px solid forestgreen;
+    margin-right: auto;
+    margin-left: auto;
+    justify-items: center;
+}
+p {
+    margin: 0 auto;
+    text-align:center;
+}
+* {
+    font-family: 'Josefin Sans', sans-serif !important;   
+  }

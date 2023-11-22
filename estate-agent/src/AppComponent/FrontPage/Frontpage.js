@@ -1,41 +1,48 @@
 /* eslint-disable react/jsx-no-undef */
-import { Link } from "react-router-dom";
+import { Link, Outlet} from "react-router-dom";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import "./Frontpage.css";
 import React from "react";
-function FrontPage() {
+function Frontpage() {
   return (
-    <div class="container custom-container">
-      <div class="row custom-row">
+    <>
+    <div className="container custom-container">
+      <div className="row custom-row">
         <h1>
           <img
             src={require("../../image/qa.png")}
-            class="rounded"
+            className="rounded"
             alt="Logo"
           ></img>
           Real Estate Agent
         </h1>
       </div>
-      <nav class="navbar navbar-expand-lg ">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">
-                Properties <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Sellers
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                Buyers
-              </a>
-            </li>
-          </ul>
-      </nav>
-    </div>
+      <Navbar bg="dark" data-bs-theme="dark">
+        <Container>
+          <Navbar.Brand href="property">
+            <img
+              alt=""
+              src={require("../../image/qa.png")}
+              width="30"
+              height="30"
+              className="d-lg-grid"
+            />{' '}
+          </Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="property">Property</Nav.Link>
+            <Nav.Link href="seller">Sellers</Nav.Link>
+            <Nav.Link href="buyer">Buyers</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+    </div><div className="container">
+        <Outlet />
+      </div>
+      </>
   );
 }
 
-export default FrontPage;
+export default Frontpage;
