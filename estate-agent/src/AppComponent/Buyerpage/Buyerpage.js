@@ -6,6 +6,7 @@ import React from "react";
 
 function Buyerpage() {
  // reducer used to keep track of the state of the buyer list then update it when something new gets added
+ // The method takes in a state and an action then depending on the action it will update the state
  const buyerListReducer = (state, action) => {
   switch (action.type) {
       case "ADD":

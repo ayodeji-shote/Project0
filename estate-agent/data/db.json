@@ -59,22 +59,6 @@
       "postcode": "CF1 1AA",
       "phone": "1234234",
       "id": 10
-    },
-    {
-      "firstName": "",
-      "surname": "",
-      "address": "",
-      "postcode": "",
-      "phone": "",
-      "id": 11
-    },
-    {
-      "firstName": "Ayodeji",
-      "surname": "Shote",
-      "address": "Block D, FLat 7 A",
-      "postcode": "DD1 5EF",
-      "phonenumber": "07864781067",
-      "id": 12
     }
   ],
   "property": [
